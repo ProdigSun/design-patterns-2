@@ -19,7 +19,7 @@ public class GeraPedidoHandler {
 
 	public void executar(GeraPedido geraPedido) {
 		Orcamento orcamento = new Orcamento();
-		orcamento.adicionarItem(new ItemOrcamento(new BigDecimal("")));
+		orcamento.adicionarItem(new ItemOrcamento(new BigDecimal("200")));
 		Pedido pedido = new Pedido(geraPedido.getCliente(), LocalDateTime.now(), orcamento);
 
 		this.acoesAposGerarPedido.forEach(a -> a.executarAcao(pedido));
